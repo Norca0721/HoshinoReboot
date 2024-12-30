@@ -18,11 +18,18 @@ async def start_up(ev: CQEvent):
         data = json.loads(f.read())
     bot = get_bot()
     
+    if not SAMPLE.exists():
+        data = {}
+        with open(SAMPLE, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=4)
+    
     try:
         with open(SAMPLE, 'r', encoding='utf-8') as f:
             data = json.load(f)
             if not isinstance(data, dict):  # 确保data是字典
                 data = {}
+                with open(SAMPLE, 'w', encoding='utf-8') as f:
+                    json.dump(data, f, ensure_ascii=False, indent=4)
     except (FileNotFoundError, json.JSONDecodeError):
         data = {}
     
