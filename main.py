@@ -1,4 +1,4 @@
-from . import sv, log, SAMPLE, BOTNAME
+from . import sv, log, Port, SAMPLE, BOTNAME
 import json
 import os
 from pathlib import Path
@@ -79,6 +79,7 @@ async def sudo(bot, ev: CQEvent):
             python,
             str(reboot_script),
             run_path,
+            str(Port)
         ]
 
         try:
