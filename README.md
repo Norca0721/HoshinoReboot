@@ -13,4 +13,12 @@ linux 环境未测试
 ```
 
 ### 环境需求
-- python 3.9+
+```
+python 3.9+
+```
+
+### 使用说明
+```
+在 hoshino/config/__bot__.py 中添加本项目文件名
+在群里或私信向 bot 发送 [开启 HoshinoReboot] 启用插件
+```
