@@ -14,14 +14,14 @@ import runpy
 
 @on_websocket_connect
 async def start_up(ev: CQEvent):
-    with open(SAMPLE, 'r', encoding='utf-8') as f:
-        data = json.loads(f.read())
-    bot = get_bot()
-    
     if not SAMPLE.exists():
         data = {}
         with open(SAMPLE, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
+            
+    with open(SAMPLE, 'r', encoding='utf-8') as f:
+        data = json.loads(f.read())
+    bot = get_bot()
     
     try:
         with open(SAMPLE, 'r', encoding='utf-8') as f:
