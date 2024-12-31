@@ -3,11 +3,6 @@
 
 ### 注意事项
 ```
-开启 HoshinoReboot      ：启用插件
-/sudo reboot            ：重启bot
-
-重启成功之后会在群聊中发送 [bot名 启动成功]
-
 该项目在 windows 环境下编写与运行
 linux 环境未测试
 ```
@@ -21,4 +16,9 @@ python 3.9+
 ```
 在 hoshino/config/__bot__.py 中添加本项目文件名
 在群里或私信向 bot 发送 [开启 HoshinoReboot] 启用插件
+
+开启 HoshinoReboot      ：启用插件
+/sudo reboot            ：重启bot
+
+重启成功之后会在群聊中发送 [bot名 启动成功]
 ```
