@@ -7,6 +7,11 @@
 linux 环境未测试
 ```
 
+### 使用前置
+```bash
+pip install -r requirements.txt
+```
+
 ### 环境需求
 ```
 python 3.9+
