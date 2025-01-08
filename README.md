@@ -24,6 +24,7 @@ python 3.9+
 
 开启 HoshinoReboot      ：启用插件
 /sudo reboot            ：重启bot
+/sudo check             ：查看bot存活情况
 
 重启成功之后会在群聊中发送 [bot名 启动成功]
 ```
