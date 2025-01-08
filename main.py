@@ -64,6 +64,7 @@ async def sudo(bot, ev: CQEvent):
     except (FileNotFoundError, json.JSONDecodeError):
         data = {}
         
+    # 重启后端
     if args[0] == "reboot":
         msg_id = await bot.send(ev, f"[{BOTNAME} 重启中...]")
         data["message_id"] = msg_id.get('message_id', None)
@@ -98,3 +99,12 @@ async def sudo(bot, ev: CQEvent):
         except Exception as e:
             log.info(f"启动重启脚本失败: {e}")
             await bot.send(ev, f"{BOTNAME} 重启失败")
+            
+    # 死活检测
+    elif args[0] == "check":
+        msg = '[BOT运行中......]'
+        try:
+            await bot.finish(ev, message=msg)
+        except Exception as e:
+            log.info("挂了！！！")
+        return
