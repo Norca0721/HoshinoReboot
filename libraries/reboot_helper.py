@@ -1,9 +1,6 @@
 import psutil
 import sys
 import os
-import time
-import subprocess
-
 
 
 def close_port(port):
