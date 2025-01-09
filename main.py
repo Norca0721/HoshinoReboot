@@ -39,7 +39,7 @@ async def start_up(ev: CQEvent):
     try:
         if data["reboot"] == "True":
             group_id = data["group_id"]
-            await bot.send_group_msg(group_id=group_id, message=("[ShizukuBOT 启动成功]"))
+            await bot.send_group_msg(group_id=group_id, message=(f"[{BOTNAME} 启动成功]"))
             data["reboot"] = "False"
             with open(SAMPLE, 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=4)
