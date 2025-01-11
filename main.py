@@ -17,7 +17,6 @@ async def start_up(ev: CQEvent):
         data = json.loads(f.read())
     
     bot = get_bot()
-    #groups = await sv.get_enable_groups()
     
     try:
         with open(SAMPLE, 'r', encoding='utf-8') as f:
@@ -64,7 +63,7 @@ async def sudo(bot, ev: CQEvent):
     except (FileNotFoundError, json.JSONDecodeError):
         data = {}
         
-    # 重启后端
+    # 重启相关
     if args[0] == "reboot":
         msg_id = await bot.send(ev, f"[{BOTNAME} 重启中...]")
         data["message_id"] = msg_id.get('message_id', None)
@@ -92,8 +91,13 @@ async def sudo(bot, ev: CQEvent):
         ]
 
         try:
-            # 使用新窗口运行重启脚本
+            # Windows
             subprocess.Popen(reboot_command, creationflags=subprocess.CREATE_NEW_CONSOLE)
+            log.info(f"重启脚本已启动: {' '.join(reboot_command)}")
+            os._exit(0)
+        except AttributeError:
+            # Linux
+            subprocess.Popen(reboot_command)
             log.info(f"重启脚本已启动: {' '.join(reboot_command)}")
             os._exit(0)
         except Exception as e:
