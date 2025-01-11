@@ -4,7 +4,7 @@
 ### 注意事项
 ```
 该项目在 windows 环境下编写与运行
-linux 环境未测试
+linux 环境请翻到查看最底下的项目
 ```
 
 ### 使用前置
@@ -28,3 +28,6 @@ python 3.9+
 
 重启成功之后会在群聊中发送 [bot名 启动成功]
 ```
+
+### Linux 相关
+- **请前往此仓库 -> [Git-Manage](https://github.com/KBVsent/Git-Manage)**
