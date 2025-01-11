@@ -96,13 +96,18 @@ async def sudo(bot, ev: CQEvent):
             log.info(f"重启脚本已启动: {' '.join(reboot_command)}")
             os._exit(0)
         except AttributeError:
-            # Linux
+            # Linux 悲报 还是炸了
             subprocess.Popen(reboot_command)
             log.info(f"重启脚本已启动: {' '.join(reboot_command)}")
             os._exit(0)
         except Exception as e:
             log.info(f"启动重启脚本失败: {e}")
+            data["reboot"] = "False"
+            data["group_id"] = 0
+            with open(SAMPLE, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=4)
             await bot.send(ev, f"{BOTNAME} 重启失败")
+            return
             
     # 死活检测
     elif args[0] == "check":
