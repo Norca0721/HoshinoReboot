@@ -31,7 +31,3 @@ python 3.9+
 
 ### Linux 相关
 - **请前往此仓库 -> [Git-Manage](https://github.com/KBVsent/Git-Manage)**
-
-| Nickname         | Contribution      |
-| ---------------- | ----------------- |
-| [HoshinoReboot](https://github.com/Norca0721/HoshinoReboot) | 提供的重启相关功能 |
