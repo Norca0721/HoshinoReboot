@@ -50,6 +50,7 @@ async def sudo(bot, ev: CQEvent):
     if not priv.check_priv(ev, priv.SUPERUSER):
         try:
             await bot.delete_msg(message_id=ev.message_id)
+            return
         except Exception as e:
             return
         
