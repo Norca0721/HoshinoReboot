@@ -1,3 +1,5 @@
+# 2026/05/02 重构决定
+
 ## Hoshino Reboot
 基于 [HoshinoBotv2](https://github.com/Ice9Coffee/HoshinoBot) 的用于快速重启bot的插件
 
